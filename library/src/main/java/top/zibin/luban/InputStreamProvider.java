@@ -15,4 +15,5 @@ public interface InputStreamProvider {
   void close();
 
   String getPath();
+  long reportLength();
 }

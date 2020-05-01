@@ -1,5 +1,6 @@
 package top.zibin.luban;
 
+import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
@@ -149,10 +150,9 @@ enum Checker {
     }
   }
 
-  boolean needCompress(int leastCompressSize, String path) {
+  boolean needCompress(int leastCompressSize, int sourceLength) {
     if (leastCompressSize > 0) {
-      File source = new File(path);
-      return source.exists() && source.length() > (leastCompressSize << 10);
+      return sourceLength > (leastCompressSize << 10);
     }
     return true;
   }

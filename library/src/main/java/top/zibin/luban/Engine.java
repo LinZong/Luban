@@ -84,7 +84,8 @@ class Engine {
     fos.flush();
     fos.close();
     stream.close();
-
+    // close resource.
+    srcImg.close();
     return tagImg;
   }
 }
